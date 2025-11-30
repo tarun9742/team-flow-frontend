@@ -1,4 +1,3 @@
-// src/components/layout/DashboardLayout.tsx
 import Sidebar from "./Sidebar";
 import { Toaster } from "@/components/ui/toaster";
 import { Outlet } from "react-router-dom";

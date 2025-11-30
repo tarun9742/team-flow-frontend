@@ -52,8 +52,7 @@ interface User {
   name: string;
   role: "ADMIN" | "MANAGER" | "MEMBER";
 }
-
-// Sortable Task Card
+ 
 function SortableTaskCard({ task, members }: { task: Task; members: User[] }) {
   const {
     attributes,

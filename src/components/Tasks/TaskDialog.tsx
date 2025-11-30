@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// src/components/tasks/TaskDialog.tsx
 import { useState, useEffect } from "react";
 import {
   Dialog,
@@ -45,7 +44,7 @@ interface Task {
 interface Props {
   task?: Task;
   trigger?: "add" | "edit";
-  projectId?: string; // optional: lock to current project
+  projectId?: string;  
 }
 
 export default function TaskDialog({
@@ -101,8 +100,7 @@ export default function TaskDialog({
           setTeamMembers([]);
           return;
         }
-
-        // FIX: handle both string and object teamId
+ 
         const rawTeamId = project.teamId;
         const teamId =
           typeof rawTeamId === "string"

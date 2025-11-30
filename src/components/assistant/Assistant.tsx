@@ -9,8 +9,7 @@ export default function Assistant() {
 
   const handleSend = () => {
     if (!input.trim()) return;
-
-    // Show user message
+ 
     addMessage({
       id: Date.now().toString(),
       content: input,
@@ -18,8 +17,7 @@ export default function Assistant() {
       senderName: user!.name,
       timestamp: new Date(),
     });
-
-    // Process assistant reply
+ 
     sendAssistantMessage(input);
     setInput("");
   };

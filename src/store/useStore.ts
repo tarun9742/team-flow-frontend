@@ -1,4 +1,3 @@
-// src/store/useStore.ts
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -128,8 +127,7 @@ export const useStore = create<AppState>()(
           messages: [...state.messages, message],
         })),
 
-      sendAssistantMessage: (input) => {
-        // Simple mock implementation - in real app this would call an API
+      sendAssistantMessage: (input) => { 
         const assistantMessage: Message = {
           id: Date.now().toString(),
           content: `Assistant response to: ${input}`,
@@ -144,10 +142,7 @@ export const useStore = create<AppState>()(
 
       loadTeams: async () => {
         try {
-          // Note: This would need to be imported or passed in, but for now we'll assume it's available
-          // const api = (await import("@/lib/api")).default;
-          // const res = await api.get("/teams");
-          // set({ teams: res.data || [] });
+         
         } catch (error) {
           console.error("Failed to load teams:", error);
         }

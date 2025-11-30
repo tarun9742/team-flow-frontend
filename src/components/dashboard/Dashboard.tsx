@@ -1,4 +1,3 @@
-// src/components/dashboard/Dashboard.tsx
 import { useEffect, useMemo } from "react";
 import { useStore } from "@/store/useStore";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -32,13 +31,11 @@ export default function Dashboard() {
       }
     };
 
-    fetchLiveData();
-    // Optional: Poll every 30 seconds for real-time feel
+    fetchLiveData(); 
     const interval = setInterval(fetchLiveData, 30_000);
     return () => clearInterval(interval);
   }, [setProjects, setTasks, setTeamMembers]);
-
-  // LIVE COMPUTED STATS (re-calculates instantly)
+ 
   const stats = useMemo(() => {
     const myTasks = tasks.filter(t => t.assignedTo === user?._id);
     const completed = tasks.filter(t => t.status === "done");

@@ -1,4 +1,3 @@
-// src/components/TeamChat.tsx
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { io, Socket } from "socket.io-client";
@@ -20,8 +19,7 @@ interface Message {
 export default function TeamChat() {
   const { user, teams } = useStore();
   const { teamId } = useParams<{ teamId: string }>();
-
-  // ALL HOOKS MUST BE AT THE TOP — UNCONDITIONALLY
+ 
   const [messages, setMessages] = useState<Message[]>([]);
   const [message, setMessage] = useState("");
   const [isConnected, setIsConnected] = useState(false);
@@ -60,8 +58,7 @@ export default function TeamChat() {
     socket.on("connect", async () => {
       setIsConnected(true);
       setLoadingMessages(true);
-      setError(null);
-      // Fetch message history for specific team
+      setError(null); 
       try {
         console.log(`Fetching messages for team: ${teamId}`);
         const res = await api.get(`/messages/team/${teamId}`);
@@ -104,8 +101,7 @@ export default function TeamChat() {
   }, [message, teamId, canSendMessages]);
 
   const isOwnMessage = (msg: Message) => msg.senderId._id === user?._id;
-
-  // NOW safe to early return (after all hooks)
+ 
   if (!user || !user._id) {
     return (
       <>

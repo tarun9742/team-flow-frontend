@@ -1,4 +1,3 @@
-// src/components/team/AddMemberDialog.tsx
 import { useState } from "react";
 import { useStore } from "@/store/useStore"; 
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";

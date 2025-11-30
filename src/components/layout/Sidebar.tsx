@@ -1,5 +1,4 @@
-// src/components/layout/Sidebar.tsx
-import {
+ import {
   Home,
   // KanbanSquare,
   MessageSquare,
@@ -38,8 +37,7 @@ export default function Sidebar() {
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = location.pathname === item.path;
-
-          // Hide Team tab for non-admin
+ 
           if (item.path === "/team" && user?.role !== "ADMIN") return null;
 
           return (

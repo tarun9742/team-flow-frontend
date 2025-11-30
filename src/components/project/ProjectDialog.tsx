@@ -74,14 +74,12 @@ export default function ProjectDialog() {
     };
 
     fetchTeams();
-
-    // Cleanup: prevent state update if dialog closed
+ 
     return () => {
       isMounted = false;
     };
-  }, [open]); // ← ONLY depends on `open`, not toast, not anything else
-
-  // Reset form when dialog closes
+  }, [open]);  
+ 
   useEffect(() => {
     if (!open) {
       setName("");
@@ -124,7 +122,7 @@ export default function ProjectDialog() {
       });
 
       toast({ title: "Success", description: "Project created successfully!" });
-      setOpen(false); // This will trigger cleanup
+      setOpen(false);  
     } catch (error: any) {
       toast({
         title: "Failed",
